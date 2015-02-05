@@ -1,0 +1,25 @@
+<div ng-controller="RegisterPhoneController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Login
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="list list-inset">
+      <label class="item item-input">
+          <phonenumber-directive placeholder="promptNumber" model='phoneNumber'></phonenumber-directive>
+      </label>
+      <!-- <label class="item item-input">
+          <input type="text" placeholder="Verification Code">
+      </label> -->
+      <button class="button button-block button-positive" ng-click="verifyPhone()">
+        Send Verification Code
+      </button>
+      <h1>model value: {{phoneNumber}}</h1>
+      <h1>conf code: {{expConfirmationCode}}</h1>
+  </div>
+
+
+
+</div>

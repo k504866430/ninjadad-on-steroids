@@ -1,0 +1,23 @@
+<div ng-controller="VerifyCodeController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Verify Code
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="list list-inset">
+      <label class="item item-input">
+          <input type="text" placeholder="Verification Code" ng-model="actualConfirmationCode">
+      </label>
+      <button class="button button-block button-positive" ng-click="submit()">
+        Submit
+      </button>
+      <h1>model value: {{phoneNumber}}</h1>
+      <h1>conf code: {{expConfirmationCode}}</h1>
+      <h1>your conf code: {{actualConfirmationCode}}</h1>
+  </div>
+
+
+
+</div>
