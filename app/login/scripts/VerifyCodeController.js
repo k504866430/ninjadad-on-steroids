@@ -1,6 +1,6 @@
 angular
   .module('login')
-  .controller('VerifyCodeController', ['$scope', 'supersonic', 'parseAPI', function($scope, supersonic, parseAPI) {
+  .controller('VerifyCodeController', function($scope, supersonic) {
       // Controller functionality here
       $scope.actualConfirmationCode="";
       supersonic.ui.views.current.params.onValue(function(params){
@@ -17,4 +17,4 @@ angular
               });
           }
       }
-}]);
+});

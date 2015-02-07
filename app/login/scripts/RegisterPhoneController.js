@@ -1,17 +1,23 @@
 angular
   .module('login')
-  .controller('RegisterPhoneController', ['$scope', 'supersonic', 'parseAPI', function($scope, supersonic, parseAPI) {
+  .controller('RegisterPhoneController', function($scope, supersonic) {
       // Controller functionality here
       $scope.promptNumber="Verify phone number";
       $scope.phoneNumber="";
       $scope.verifyPhone = function(){
-          parseAPI.func("verifyMobile", {"mobile": $scope.phoneNumber}).then(function(data){
-              supersonic.ui.layers.push("login#verifyCode", {
-                  params: {
-                      expConfirmationCode: data.result,
-                      phoneNumber: $scope.phoneNumber
-                  }
-              });
-          });
+          Parse.Cloud.run("verifyMobile", {"mobile": $scope.phoneNumber}, {
+              success: function(data) {
+                  console.log(data);
+                  supersonic.ui.layers.push("login#verifyCode", {
+                      params: {
+                          expConfirmationCode: data,
+                          phoneNumber: $scope.phoneNumber
+                      }
+                  });
+              },
+              error: function(err) {
+                  console.log(err);
+              }
+          })
       }
-  }]);
+  });

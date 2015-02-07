@@ -1,7 +1,12 @@
+Parse.initialize("20vVReFO5IaO7Uauenmu7apVa6FeL0a92Xrz50ey", "e41qgWb85vB5jEgfo0vDl5YWWPKdmNMMgU5d8DgI");
 angular.module('common', [
   // Declare here all AngularJS dependencies that are shared by all modules.
-  'supersonic'
-]).factory('parseAPI', function($q, $http){
+  'supersonic',
+  'parse-angular',
+  'parse-angular.enhance'
+]).run(function(){
+
+}).factory('parseAPI', function($q, $http){
     var parseEndpoint = "https://api.parse.com/1/";
     var parseRestKey = "OnaAFuUHENn5kwBlvc4IsAN6J5rz4reLWVoXpfZ8";
     var parseAppId = "20vVReFO5IaO7Uauenmu7apVa6FeL0a92Xrz50ey";
