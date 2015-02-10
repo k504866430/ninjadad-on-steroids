@@ -1,19 +1,18 @@
-<div ng-controller="VerifyCodeController">
+<div ng-controller="EnterPinController">
 
-  <super-navbar>
+  <!-- <super-navbar>
     <super-navbar-title>
-      Verify Code
+      Enter PIN
     </super-navbar-title>
-  </super-navbar>
+  </super-navbar> -->
 
   <div class="list list-inset">
       <label class="item item-input">
-          <input type="text" placeholder="Verification Code" ng-model="actualConfirmationCode">
+          <input type="text" placeholder="4-digit PIN" ng-model="pinNumber">
       </label>
       <button class="button button-block button-positive" ng-click="submit()">
         Submit
       </button>
-      <h1>conf code: {{expConfirmationCode}}</h1>
   </div>
 
 

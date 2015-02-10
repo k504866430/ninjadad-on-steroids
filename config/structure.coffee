@@ -22,7 +22,7 @@ module.exports =
   # ]
 
   rootView:
-    location: "login#registerPhone"
+    location: "login#landingPage"
 
   # preloads: [
   #   {
